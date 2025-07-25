@@ -17,4 +17,14 @@ def find_group_anagrams(strs):
 
 print(find_group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
 
+from collections import defaultdict
+def another_sove(strs):
+    anagrams = defaultdict(list)
+
+    for word in strs:
+        key = tuple(sorted(word))
+        anagrams[key].append(word)
+
+    return list(anagrams.values())
+
 
