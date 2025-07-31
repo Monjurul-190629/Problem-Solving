@@ -18,7 +18,6 @@ class Solution:
 
         while left < right:
             current_sum = numbers[left] + numbers[right]
-
             if current_sum == target:
                 return [left + 1, right + 1]  # 1-based indexing
             elif current_sum < target:
