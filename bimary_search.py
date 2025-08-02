@@ -8,4 +8,4 @@ def binary_search(arr, target):
         else: high = mid - 1
     return "Not found"
 
-print(binary_search([1,2, 3, 6], 6))
+print(binary_search([1,2, 3, 6], 3))
