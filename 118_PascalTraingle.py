@@ -1,21 +1,19 @@
 class Solution:
     def generate(self, numRows: int) -> list[list[int]]:
+        result = []
 
-        triangle = []
+        for i in range(numRows):
+            row = []
 
-        for row in range(numRows):
+            for j in range(i + 1):
+                if j == 0 or j == i:
+                    row.append(1)
+                else:
+                    row.append(result[i - 1][j - 1] + result[i - 1][j])
 
-            # Create row filled with 1
-            current_row = [1] * (row + 1)
+            result.append(row)
 
-            # Fill middle values
-            for col in range(1, row):
+        return result
 
-                current_row[col] = (
-                    triangle[row - 1][col - 1]
-                    + triangle[row - 1][col]
-                )
-
-            triangle.append(current_row)
-
-        return triangle
+sol = Solution()
+print(sol.generate(5))
