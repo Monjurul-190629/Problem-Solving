@@ -10,8 +10,8 @@ class Solution:
         for _ in range(32):
             bit = n & 1
             result = (result << 1) | bit
-            n = n >> 1
-        return result
+            n = n >> 1   
+        return result   # time complexity O(K) and space complexity O(1)
 
 sol = Solution()
 print(sol.reverseBits(6))
